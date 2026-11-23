@@ -1,0 +1,1024 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Pooja's Baby Shower RSVP</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Delius&family=Gaegu:wght@400;700&family=Sacramento&display=swap">
+<style>
+/* Layout: one slightly tilted letter card on a honey gingham tablecloth; the three steps (find, reply, thanks) swap inside the same card */
+:root{
+  --cloth:#FFF8EC;
+  --check:rgba(252,203,124,.30);
+  --paper:#F8F5EF;
+  --paper-edge:#E9E1D2;
+  --ink:#7A5233;
+  --ink-soft:#9A7A5E;
+  --honey:#F2B544;
+  --honey-deep:#C98A2E;
+  --honey-wash:#FFF1D2;
+  --leaf:#9DBE84;
+  --blush:#F3B6AE;
+  --white:#FFFFFF;
+  --line:#E8DCC8;
+  --danger:#B4533A;
+  --go:#6F8F57;
+  --f-script:"Sacramento","Segoe Script","Brush Script MT",cursive;
+  --f-body:"Delius","Trebuchet MS",system-ui,sans-serif;
+  --f-label:"Gaegu","Delius","Trebuchet MS",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{min-height:100%}
+body{
+  background-color:var(--cloth);
+  background-image:
+    linear-gradient(90deg,var(--check) 50%,transparent 50%),
+    linear-gradient(var(--check) 50%,transparent 50%);
+  background-size:68px 68px;
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:16px;
+  line-height:1.5;
+}
+.stage{
+  min-height:100vh;
+  min-height:100dvh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:28px;
+  padding-block:56px 64px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  overflow-x:clip;
+  position:relative;
+}
+
+/* ---------- the letter card ---------- */
+.card{
+  position:relative;
+  width:min(660px,100%);
+  min-height:430px;
+  background-color:var(--paper);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .36 0 0 0 0 .24 0 0 0 .16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  border:1px solid var(--paper-edge);
+  box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 18px 40px -18px rgba(122,82,51,.35),0 3px 8px rgba(122,82,51,.10);
+  transform:rotate(-1.2deg);
+  padding:64px 56px 72px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.card > .view{transform:rotate(1.2deg);position:relative;z-index:2}
+
+.bow{position:absolute;left:-46px;top:-40px;width:150px;transform:rotate(-14deg);pointer-events:none;filter:drop-shadow(0 4px 4px rgba(122,82,51,.18))}
+.stamp{position:absolute;right:26px;top:24px;width:150px;pointer-events:none}
+.pot{position:absolute;right:-34px;bottom:-30px;width:190px;pointer-events:none}
+
+/* ---------- shared type ---------- */
+.eyebrow{
+  font-family:var(--f-label);font-weight:700;
+  text-transform:uppercase;letter-spacing:.2em;font-size:1rem;
+  color:var(--ink-soft);margin:0;
+}
+.script{
+  font-family:var(--f-script);font-weight:400;
+  color:var(--ink);line-height:1.05;margin:0;
+  text-wrap:balance;
+}
+.view{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;width:100%;max-width:470px;margin-inline:auto}
+.view[hidden]{display:none!important}
+.view.enter{animation:rise .45s ease both}
+@keyframes rise{from{opacity:.0;transform:rotate(1.2deg) translateY(10px)}to{opacity:1;transform:rotate(1.2deg) translateY(0)}}
+
+/* ---------- search ---------- */
+#v-search .script{font-size:clamp(3.4rem,9vw,4.8rem);margin-top:6px}
+.search{width:100%;margin-top:12px}
+.searchbox{
+  display:flex;align-items:center;gap:10px;
+  height:54px;padding:0 6px 0 18px;
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:27px;
+  box-shadow:0 1px 6px rgba(122,82,51,.12);
+  transition:box-shadow .15s;
+}
+.searchbox:hover,.searchbox:focus-within{box-shadow:0 2px 10px rgba(122,82,51,.22)}
+.searchbox > svg{flex:none;color:var(--ink-soft)}
+#q{
+  flex:1;min-width:0;height:100%;
+  border:0;outline:0;background:transparent;
+  font:inherit;font-size:1.05rem;color:var(--ink);
+}
+#q::placeholder{color:#B8A28C}
+#q:disabled{cursor:progress}
+.clear{
+  flex:none;width:34px;height:34px;border-radius:50%;border:0;background:transparent;
+  color:var(--ink-soft);cursor:pointer;display:grid;place-items:center;
+}
+.clear:hover{background:var(--honey-wash)}
+.clear:focus-visible{outline:2px solid var(--honey-deep);outline-offset:1px}
+.find{
+  flex:none;height:42px;padding:0 18px 0 20px;border:0;border-radius:21px;cursor:pointer;
+  display:flex;align-items:center;gap:6px;
+  background:var(--honey-deep);color:var(--white);
+  font-family:var(--f-label);font-weight:700;font-size:1.1rem;letter-spacing:.12em;text-transform:uppercase;
+  transition:background .15s,transform .1s;
+}
+.find:hover{background:#BF7F22}
+.find:active{transform:translateY(1px)}
+.find:disabled{background:#D9C3A3;cursor:not-allowed}
+.find:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+
+.found{width:100%;display:flex;flex-direction:column;gap:10px;margin-top:4px;text-align:left}
+.found-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:0 6px}
+.found-head .eyebrow{font-size:.9rem;letter-spacing:.14em}
+.found-count{font-size:.82rem;color:var(--ink-soft);font-variant-numeric:tabular-nums;white-space:nowrap}
+.matches{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.match{
+  width:100%;display:flex;align-items:center;gap:12px;
+  padding:11px 14px 11px 12px;
+  background:var(--white);border:1.5px solid var(--line);border-radius:16px;
+  font:inherit;color:inherit;text-align:left;cursor:pointer;
+  transition:border-color .15s,background .15s,transform .15s;
+}
+.match:hover{border-color:var(--honey);background:#FFFCF5;transform:translateY(-1px)}
+.match:focus-visible{outline:2px solid var(--honey-deep);outline-offset:2px}
+.avatar{
+  flex:none;width:38px;height:38px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--honey);color:var(--white);
+  font-family:var(--f-label);font-weight:700;font-size:1.25rem;
+}
+.opt-text{flex:1;min-width:0;display:flex;flex-direction:column}
+.opt-name{color:var(--ink);font-size:1.02rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.opt-name b{font-weight:400;background:linear-gradient(transparent 58%,rgba(242,181,68,.45) 58%)}
+.opt-sub{font-size:.82rem;color:var(--ink-soft)}
+.done-chip{flex:none;font-family:var(--f-label);font-weight:700;font-size:.85rem;letter-spacing:.06em;color:#6F8F57;text-transform:uppercase}
+.chev{flex:none;color:var(--honey-deep)}
+.pager{display:flex;justify-content:center;gap:8px}
+.pager button{
+  appearance:none;border:1px solid var(--line);background:var(--white);color:var(--ink);
+  font:inherit;font-size:.88rem;padding:5px 14px;border-radius:999px;cursor:pointer;
+}
+.pager button:hover:not(:disabled){border-color:var(--honey)}
+.pager button:disabled{opacity:.45;cursor:default}
+.pager button:focus-visible{outline:2px solid var(--honey-deep);outline-offset:2px}
+.empty{
+  margin:0;padding:12px 16px;border-radius:14px;
+  background:var(--white);border:1.5px dashed var(--line);
+  color:var(--ink-soft);font-size:.92rem;text-align:center;
+}
+.hint{font-size:.92rem;color:var(--ink-soft);margin:2px 0 0;max-width:34ch}
+.load-error{color:var(--danger)}
+
+/* ---------- rsvp ---------- */
+#v-rsvp{gap:16px}
+#v-rsvp .script{font-size:clamp(2.7rem,8vw,3.6rem)}
+.members{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 8px;margin:0;padding:0;list-style:none}
+.members li{
+  padding:3px 12px;border-radius:999px;
+  background:var(--white);border:1px solid var(--line);
+  font-size:.9rem;
+}
+.people{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;width:100%}
+.person{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 12px;
+  padding:9px 9px 9px 16px;border-radius:16px;
+  background:var(--white);border:1.5px solid var(--line);text-align:left;
+  transition:border-color .15s;
+}
+.person.is-set{border-color:#E3CFAE}
+.p-name{flex:1 1 120px;min-width:0;overflow-wrap:anywhere}
+.seg{position:relative;display:inline-flex;gap:2px;padding:3px;border-radius:999px;background:var(--honey-wash)}
+.seg input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.seg label{
+  padding:6px 13px;border-radius:999px;cursor:pointer;white-space:nowrap;
+  font-size:.86rem;color:var(--ink-soft);transition:background .15s,color .15s;
+}
+.seg label:hover{color:var(--ink)}
+.seg input:checked + label.go{background:var(--go);color:var(--white)}
+.seg input:checked + label.nogo{background:var(--ink-soft);color:var(--white)}
+.seg input:focus-visible + label{outline:2px solid var(--honey-deep);outline-offset:1px}
+.all-note{font-size:.88rem;color:var(--ink-soft);margin:0}
+.need{font-size:.85rem;color:var(--ink-soft);margin:0}
+.prior{
+  font-size:.88rem;color:var(--ink);margin:0;
+  background:var(--honey-wash);border:1px dashed var(--honey);border-radius:10px;padding:6px 12px;
+}
+fieldset{border:0;margin:0;padding:0;width:100%}
+legend{padding:0;margin:0 auto 8px;}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%}
+.choice{position:relative}
+.choice input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.choice label{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  padding:16px 10px 14px;border-radius:16px;
+  background:var(--white);border:1.5px solid var(--line);
+  cursor:pointer;transition:border-color .15s,background .15s,transform .15s;
+  height:100%;
+}
+.choice label svg{width:44px;height:44px}
+.choice .c-text{display:flex;flex-direction:column;gap:2px}
+.choice .c-title{font-size:1rem}
+.choice .c-sub{font-size:.8rem;color:var(--ink-soft)}
+.choice input:hover + label{border-color:var(--honey)}
+.choice input:checked + label{border-color:var(--honey-deep);background:var(--honey-wash);transform:translateY(-1px);box-shadow:0 4px 10px -4px rgba(201,138,46,.5)}
+.choice input:focus-visible + label{outline:2px solid var(--honey-deep);outline-offset:2px}
+
+.note{width:100%;display:flex;flex-direction:column;gap:6px;text-align:left}
+.note label{font-size:.92rem}
+.note label span{color:var(--ink-soft)}
+#msg{
+  width:100%;min-height:96px;resize:vertical;
+  padding:12px 14px;border-radius:14px;
+  border:1px solid var(--line);background:var(--white);
+  font:inherit;font-size:.98rem;color:var(--ink);line-height:1.45;
+}
+#msg:focus{outline:2px solid var(--honey);outline-offset:0;border-color:var(--honey)}
+#msg::placeholder{color:#B8A28C}
+.count{font-size:.75rem;color:var(--ink-soft);align-self:flex-end;font-variant-numeric:tabular-nums}
+
+.actions{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
+.btn{
+  appearance:none;border:0;cursor:pointer;
+  font-family:var(--f-label);font-weight:700;font-size:1.25rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--white);background:var(--honey-deep);
+  padding:12px 34px 10px;border-radius:999px;
+  box-shadow:0 3px 0 #A86F1E;
+  transition:transform .1s,box-shadow .1s,background .15s;
+}
+.btn:hover{background:#BF7F22}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 #A86F1E}
+.btn:disabled{background:#D9C3A3;box-shadow:0 3px 0 #C4AA86;cursor:not-allowed}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.link{
+  appearance:none;border:0;background:none;cursor:pointer;padding:4px;
+  font:inherit;font-size:.9rem;color:var(--ink-soft);text-decoration:underline;text-underline-offset:3px;
+}
+.link:hover{color:var(--ink)}
+.link:focus-visible{outline:2px solid var(--honey-deep);border-radius:4px}
+.error{color:var(--danger);font-size:.9rem;margin:0}
+
+/* ---------- thanks ---------- */
+#v-done .script{font-size:clamp(3.4rem,9vw,4.6rem)}
+#done-text{margin:0;max-width:36ch}
+.books{
+  margin-top:4px;padding:14px 18px 16px;max-width:360px;
+  background:var(--white);border:1.5px dashed var(--honey);border-radius:18px;
+}
+.books h3{font-family:var(--f-script);font-weight:400;font-size:2.1rem;margin:0;line-height:1}
+.books p{margin:4px 0 0;font-size:.9rem;color:var(--ink-soft)}
+
+/* ---------- around the card ---------- */
+.details{
+  margin:0;text-align:center;
+  font-family:var(--f-label);font-weight:700;font-size:1.15rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink);
+  display:flex;flex-wrap:wrap;justify-content:center;gap:4px 18px;
+}
+.details span+span::before{content:"✿";margin-right:18px;color:var(--honey-deep);letter-spacing:0}
+.demo-tag{
+  font-size:.78rem;color:var(--ink-soft);margin:-14px 0 0;text-align:center;
+  background:rgba(255,255,255,.7);padding:4px 12px;border-radius:999px;
+}
+.balloon{position:absolute;left:max(4vw,16px);top:12vh;width:74px;pointer-events:none}
+.bee{position:absolute;width:44px;pointer-events:none}
+.bee.b1{right:9vw;top:9vh}
+.bee.b2{left:16vw;bottom:12vh;transform:scaleX(-1)}
+@media (prefers-reduced-motion:no-preference){
+  .balloon{animation:bob 6s ease-in-out infinite}
+  .bee.b1{animation:buzz 5s ease-in-out infinite}
+  .bee.b2{animation:buzz2 6.5s ease-in-out infinite}
+}
+@media (prefers-reduced-motion:reduce){.view.enter{animation:none}}
+@keyframes bob{50%{transform:translateY(-12px) rotate(2deg)}}
+@keyframes buzz{25%{transform:translate(-8px,-6px) rotate(-6deg)}75%{transform:translate(6px,4px) rotate(4deg)}}
+@keyframes buzz2{25%{transform:scaleX(-1) translate(6px,-8px)}75%{transform:scaleX(-1) translate(-6px,5px)}}
+
+@media (max-width:980px){.balloon{display:none}}
+@media (max-width:640px){
+  .find span{display:none}
+  .find{padding:0 12px}
+  .stage{padding-block:44px 48px;gap:24px}
+  .card{padding:86px 22px 92px;min-height:0;transform:rotate(-.8deg)}
+  .card > .view{transform:rotate(.8deg)}
+  @keyframes rise{from{opacity:0;transform:rotate(.8deg) translateY(10px)}to{opacity:1;transform:rotate(.8deg) translateY(0)}}
+  .bow{width:104px;left:-22px;top:-30px}
+  .stamp{width:112px;right:12px;top:12px}
+  .pot{width:128px;right:-10px;bottom:-18px}
+  .choices{grid-template-columns:1fr}
+  .choice label{flex-direction:row;justify-content:flex-start;text-align:left;padding:12px 14px;gap:12px}
+  .choice label svg{width:36px;height:36px;flex:none}
+  .choice .c-text{display:flex;flex-direction:column}
+  .details{font-size:1rem;letter-spacing:.14em;flex-direction:column}
+  .details span+span::before{content:none}
+  .bee.b2{display:none}
+  .bee.b1{right:4vw;top:2vh;width:36px}
+}
+</style>
+
+<main class="stage">
+  <!-- decorative balloon and bees on the tablecloth -->
+  <svg class="balloon" viewBox="0 0 80 170" aria-hidden="true">
+    <path d="M40 96 C 36 116, 46 128, 38 146 S 44 160, 40 168" fill="none" stroke="#B59B83" stroke-width="1.4"/>
+    <path d="M40 4 C 18 4, 6 24, 6 44 C 6 70, 28 90, 40 94 C 52 90, 74 70, 74 44 C 74 24, 62 4, 40 4 Z" fill="#F3B6AE"/>
+    <path d="M35 94 L 45 94 L 42 100 L 38 100 Z" fill="#E59F96"/>
+    <ellipse cx="54" cy="24" rx="7" ry="10" fill="#FFFFFF" opacity=".75" transform="rotate(20 54 24)"/>
+  </svg>
+  <svg class="bee b1" viewBox="0 0 60 44" aria-hidden="true"><use href="#bee-shape"/></svg>
+  <svg class="bee b2" viewBox="0 0 60 44" aria-hidden="true"><use href="#bee-shape"/></svg>
+
+  <section class="card" aria-live="polite">
+    <!-- gingham bow -->
+    <svg class="bow" viewBox="0 0 160 124" aria-hidden="true">
+      <defs>
+        <pattern id="ging" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(18)">
+          <rect width="10" height="10" fill="#FFEFCC"/>
+          <rect width="5" height="10" fill="#F6C66E" opacity=".55"/>
+          <rect width="10" height="5" fill="#F6C66E" opacity=".55"/>
+        </pattern>
+      </defs>
+      <path d="M74 64 L 40 116 L 54 110 L 60 122 L 84 70 Z" fill="url(#ging)" stroke="#DDA24A" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M86 64 L 124 112 L 110 108 L 106 121 L 76 70 Z" fill="url(#ging)" stroke="#DDA24A" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M80 58 C 62 30, 22 8, 12 34 C 4 56, 40 74, 80 64 Z" fill="url(#ging)" stroke="#DDA24A" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M80 58 C 98 30, 138 8, 148 34 C 156 56, 120 74, 80 64 Z" fill="url(#ging)" stroke="#DDA24A" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M70 58 C 52 44, 34 36, 24 40" fill="none" stroke="#DDA24A" stroke-width="1.2" opacity=".7"/>
+      <path d="M90 58 C 108 44, 126 36, 136 40" fill="none" stroke="#DDA24A" stroke-width="1.2" opacity=".7"/>
+      <ellipse cx="80" cy="61" rx="11" ry="12" fill="url(#ging)" stroke="#DDA24A" stroke-width="1.5"/>
+    </svg>
+
+    <!-- postage stamp with postmark carrying the date -->
+    <svg class="stamp" viewBox="0 0 150 100" aria-hidden="true">
+      <defs><path id="pm-arc" d="M 50 50 m -28 0 a 28 28 0 1 1 56 0"/></defs>
+      <g fill="none" stroke="#B9967A" stroke-width="1.3" opacity=".75">
+        <path d="M0 34 q 8 -5 16 0 t 16 0 t 16 0 t 16 0"/>
+        <path d="M0 44 q 8 -5 16 0 t 16 0 t 16 0 t 16 0"/>
+        <path d="M0 54 q 8 -5 16 0 t 16 0 t 16 0 t 16 0"/>
+        <path d="M0 64 q 8 -5 16 0 t 16 0 t 16 0 t 16 0"/>
+      </g>
+      <g transform="translate(76 6)">
+        <rect x="3" y="3" width="66" height="84" fill="#FFFDF8" stroke="#F8F5EF" stroke-width="6" stroke-dasharray="0 7" stroke-linecap="round"/>
+        <rect x="10" y="10" width="52" height="70" fill="#FFF3D9" stroke="#C9A27E" stroke-width="1.2"/>
+        <!-- little straw beehive -->
+        <g transform="translate(36 48)">
+          <path d="M-16 20 L 16 20 L 14 12 L -14 12 Z" fill="#F2C46A"/>
+          <path d="M-14 12 L 14 12 L 12 4 L -12 4 Z" fill="#EDB851"/>
+          <path d="M-12 4 L 12 4 L 9 -4 L -9 -4 Z" fill="#F2C46A"/>
+          <path d="M-9 -4 L 9 -4 L 5 -11 L -5 -11 Z" fill="#EDB851"/>
+          <path d="M-5 -11 L 5 -11 Q 0 -17 -5 -11 Z" fill="#F2C46A"/>
+          <path d="M-4 20 a 4 5 0 0 1 8 0 Z" fill="#8A5E3A"/>
+          <path d="M-22 22 H 22" stroke="#9DBE84" stroke-width="2.4" stroke-linecap="round"/>
+        </g>
+      </g>
+      <g transform="translate(44 6)" fill="none" stroke="#9A7A5E" opacity=".72">
+        <circle cx="50" cy="50" r="34" stroke-width="1.4"/>
+        <circle cx="50" cy="50" r="22" stroke-width="1"/>
+        <text font-family="Gaegu, sans-serif" font-weight="700" font-size="8" letter-spacing="1.1" fill="#9A7A5E" stroke="none">
+          <textPath href="#pm-arc" startOffset="50%" text-anchor="middle">PRINCETON NJ</textPath>
+        </text>
+        <text x="50" y="49" text-anchor="middle" font-family="Gaegu, sans-serif" font-weight="700" font-size="11" fill="#9A7A5E" stroke="none">JAN 24</text>
+        <text x="50" y="60" text-anchor="middle" font-family="Gaegu, sans-serif" font-weight="700" font-size="9" fill="#9A7A5E" stroke="none">2027</text>
+      </g>
+    </svg>
+
+    <!-- ===== step 1: find your name ===== -->
+    <div class="view" id="v-search">
+      <p class="eyebrow">Baby shower for <span class="js-honoree">Pooja Joshi</span></p>
+      <h1 class="script">You're invited!</h1>
+      <form class="search" id="search" role="search" novalidate>
+        <div class="searchbox">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input id="q" type="text" autocomplete="off" autocapitalize="words" spellcheck="false" enterkeyhint="search"
+                 placeholder="Loading guest list…" disabled aria-label="Your name">
+          <button class="clear" id="clear" type="button" aria-label="Clear search" hidden>
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <button class="find" id="find" type="submit" disabled aria-label="Find my invitation">
+            <span>Find me</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12 H18 M13 7 L18 12 L13 17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </form>
+      <div class="found" id="found" aria-live="polite" hidden></div>
+      <p class="hint" id="hint">Type your first and last name, then press Enter.</p>
+    </div>
+
+    <!-- ===== step 2: reply ===== -->
+    <form class="view" id="v-rsvp" hidden novalidate>
+      <p class="eyebrow">Kindly reply for</p>
+      <h2 class="script" id="party-name"></h2>
+      <p class="prior" id="prior" hidden></p>
+
+      <fieldset id="each" hidden>
+        <legend class="eyebrow">Who will be there?</legend>
+        <ul class="people" id="people"></ul>
+      </fieldset>
+
+      <fieldset id="all">
+        <legend class="eyebrow" id="choice-legend">Will you be there?</legend>
+        <div class="choices">
+          <div class="choice">
+            <input type="radio" name="attending" id="yes" value="yes">
+            <label for="yes">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M12 16 C 8 24, 8 36, 16 42 L 32 42 C 40 36, 40 24, 36 16 Z" fill="#E2A45E"/>
+                <path d="M12 26 H 36 M11 33 H 37" stroke="#B87A3C" stroke-width="1.6"/>
+                <ellipse cx="24" cy="15" rx="13" ry="3.5" fill="#C98A4C"/>
+                <path d="M11 14 Q 24 8 37 14 L 37 17 C 36 22 33 22 33 18 C 32 16 29 16 29 19 C 28 25 24 25 24 19 C 23 16 19 16 18 20 C 17 23 14 22 13 18 Z" fill="#F5C04A"/>
+              </svg>
+              <span class="c-text"><span class="c-title" id="yes-title">I'll be there</span><span class="c-sub" id="yes-sub">Joyfully accepts</span></span>
+            </label>
+          </div>
+          <div class="choice">
+            <input type="radio" name="attending" id="no" value="no">
+            <label for="no">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="6" y="13" width="36" height="24" rx="3" fill="#FFFFFF" stroke="#C9A27E" stroke-width="1.6"/>
+                <path d="M7 15 L 24 28 L 41 15" fill="none" stroke="#C9A27E" stroke-width="1.6"/>
+                <path d="M24 34 C 20 31, 18 29, 18 27 a 3 3 0 0 1 6 -1 a 3 3 0 0 1 6 1 C 30 29, 28 31, 24 34 Z" fill="#F3B6AE"/>
+              </svg>
+              <span class="c-text"><span class="c-title" id="no-title">I can't make it</span><span class="c-sub" id="no-sub">Regretfully declines</span></span>
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="note">
+        <label for="msg">A note for <span class="js-honoree-first" style="color:inherit">Pooja</span> <span>(optional)</span></label>
+        <textarea id="msg" maxlength="1000" placeholder="A wish for the baby, a favorite memory, or the book you're bringing…"></textarea>
+        <span class="count" id="count">0 / 1000</span>
+      </div>
+
+      <div class="actions">
+        <p class="error" id="send-error" role="alert" hidden></p>
+        <button class="btn" id="send" type="submit" disabled>Send RSVP</button>
+        <p class="need" id="need" hidden></p>
+        <button class="link" id="back" type="button">Not you? Search again</button>
+      </div>
+    </form>
+
+    <!-- ===== step 3: thanks ===== -->
+    <div class="view" id="v-done" hidden>
+      <p class="eyebrow" id="done-eyebrow">RSVP received</p>
+      <h2 class="script" id="done-title">Thank you!</h2>
+      <p id="done-text"></p>
+      <div class="books" id="books" hidden>
+        <h3>Books for baby</h3>
+        <p>One small request: please bring a book instead of a card, with a line or two written inside so we think of you every time we read it.</p>
+      </div>
+      <div class="actions">
+        <button class="link" id="change" type="button">Change my reply</button>
+        <button class="link" id="restart" type="button">RSVP for someone else</button>
+      </div>
+    </div>
+
+    <!-- honey pot, dipper, bee and grass at the corner -->
+    <svg class="pot" viewBox="0 0 200 170" aria-hidden="true">
+      <defs>
+        <g id="bee-shape">
+          <path d="M6 30 C 14 20, 22 36, 30 26" fill="none" stroke="#9A7A5E" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <ellipse cx="38" cy="16" rx="7" ry="9" fill="#FFFFFF" stroke="#9A7A5E" stroke-width="1" opacity=".9" transform="rotate(-25 38 16)"/>
+          <ellipse cx="46" cy="16" rx="6" ry="8" fill="#FFFFFF" stroke="#9A7A5E" stroke-width="1" opacity=".9" transform="rotate(20 46 16)"/>
+          <ellipse cx="42" cy="28" rx="12" ry="9" fill="#F6C451" stroke="#7A5233" stroke-width="1.2"/>
+          <path d="M38 19.6 C 36 24, 36 32, 38 36.4 M45 19.6 C 47 24, 47 32, 45 36.4" stroke="#5B3E28" stroke-width="3"/>
+          <circle cx="52" cy="26" r="1.4" fill="#5B3E28"/>
+          <path d="M30 28 L 26 29" stroke="#5B3E28" stroke-width="1.6" stroke-linecap="round"/>
+        </g>
+      </defs>
+      <path d="M8 160 C 50 146, 150 144, 196 158 L 196 170 L 8 170 Z" fill="#B9D19F"/>
+      <g stroke="#7FA463" stroke-width="2" stroke-linecap="round" fill="none">
+        <path d="M24 156 L 18 138 M30 156 L 32 134 M36 156 L 44 140"/>
+        <path d="M150 154 L 146 136 M158 154 L 160 130 M166 155 L 176 138 M182 156 L 186 144"/>
+      </g>
+      <path d="M118 62 L 146 18" stroke="#B88551" stroke-width="5" stroke-linecap="round"/>
+      <g fill="#C99560"><ellipse cx="148" cy="15" rx="8" ry="5" transform="rotate(-58 148 15)"/><ellipse cx="143" cy="23" rx="7" ry="4.4" transform="rotate(-58 143 23)"/></g>
+      <path d="M44 72 C 30 92, 30 136, 58 152 L 128 152 C 156 136, 156 92, 142 72 Z" fill="#D59A5D"/>
+      <path d="M38 96 H 148 M36 118 H 150 M44 140 H 142" stroke="#B57A42" stroke-width="2.4"/>
+      <path d="M60 84 C 52 104, 52 128, 64 144" fill="none" stroke="#E8B87F" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+      <ellipse cx="93" cy="70" rx="54" ry="11" fill="#BE8148"/>
+      <path d="M40 68 Q 93 50 146 68 L 146 74 C 144 88 136 90 134 76 C 132 70 126 70 124 78 C 122 100 112 100 110 80 C 108 74 102 74 100 82 C 98 92 92 92 90 80 C 88 74 80 74 78 84 C 76 106 66 106 64 82 C 62 74 54 74 52 80 C 50 88 42 86 40 76 Z" fill="#F5C04A"/>
+      <path d="M58 64 Q 80 58 100 60" fill="none" stroke="#FFE39A" stroke-width="3" stroke-linecap="round"/>
+      <g transform="translate(118 96) scale(.9)"><use href="#bee-shape"/></g>
+    </svg>
+  </section>
+
+  <p class="details"><span class="js-date">Sunday, January 24, 2027</span><span class="js-place">Princeton Lavender Farms</span></p>
+  <p class="demo-tag" id="demo-tag" hidden>Preview mode: sample guest list, replies stay in this browser</p>
+</main>
+
+<script>
+/* =========================================================
+   SETTINGS — edit these
+   ========================================================= */
+var CONFIG = {
+  // When hosting this page outside Google (Netlify, GitHub Pages…), paste your
+  // Apps Script web app URL here (ends in /exec). Leave empty when the page is
+  // served by Apps Script itself, or to run in preview mode with sample guests.
+  API_URL: "",
+  honoree: "Pooja Joshi",
+  dateText: "Sunday, January 24, 2027",
+  shortDate: "Sunday, January 24",
+  place: "Princeton Lavender Farms",
+  maxResults: 9,   // total matches kept
+  refreshAfterMs: 5 * 60 * 1000,  // re-fetch the guest list on search if older than this
+  perPage: 3       // matches shown at a time
+};
+
+/* Sample guest list used only in preview mode. The real list lives in the Google Sheet. */
+var DEMO_PARTIES = [
+  { id: "P01", label: "The Sharma Family", members: ["Raj Sharma", "Priya Sharma", "Anaya Sharma"] },
+  { id: "P02", label: "The Patel Family", members: ["Nikhil Patel", "Meera Patel"] },
+  { id: "P03", label: "Priya Shah", members: ["Priya Shah"] },
+  { id: "P04", label: "The Joshi Family", members: ["Suresh Joshi", "Asha Joshi"] },
+  { id: "P05", label: "Kavya Iyer", members: ["Kavya Iyer"] },
+  { id: "P06", label: "The Desai Family", members: ["Amit Desai", "Neha Desai", "Rohan Desai", "Isha Desai"] },
+  { id: "P07", label: "Emily Carter", members: ["Emily Carter"] },
+  { id: "P08", label: "The O'Brien Family", members: ["Sean O'Brien", "Katie O'Brien"] },
+  { id: "P09", label: "Catherine Liu", members: ["Catherine Liu"] },
+  { id: "P10", label: "Katherine Brooks", members: ["Katherine Brooks"] },
+  { id: "P11", label: "The Mehta Family", members: ["Vikram Mehta", "Ananya Mehta"] },
+  { id: "P12", label: "Jonathan Reyes", members: ["Jonathan Reyes"] },
+  { id: "P13", label: "John & Sarah Kim", members: ["John Kim", "Sarah Kim"] },
+  { id: "P14", label: "Aarav Kapoor", members: ["Aarav Kapoor"] },
+  { id: "P15", label: "The Nguyen Family", members: ["Linh Nguyen", "David Nguyen", "Mai Nguyen"] },
+  { id: "P16", label: "Sofia Rossi", members: ["Sofia Rossi"] },
+  { id: "P17", label: "The Reddy Family", members: ["Arjun Reddy", "Lakshmi Reddy"] },
+  { id: "P18", label: "Maya Thompson", members: ["Maya Thompson"] },
+  { id: "P19", label: "Deepa Krishnan", members: ["Deepa Krishnan"] },
+  { id: "P20", label: "The Garcia Family", members: ["Carlos Garcia", "Elena Garcia", "Lucía Garcia"] },
+  { id: "P21", label: "Rahul Verma", members: ["Rahul Verma"] },
+  { id: "P22", label: "Hannah Schmidt", members: ["Hannah Schmidt"] },
+  { id: "P23", label: "Tanvi & Karan Malhotra", members: ["Tanvi Malhotra", "Karan Malhotra"] },
+  { id: "P24", label: "Grace Okafor", members: ["Grace Okafor"] },
+  { id: "P25", label: "The Bhatt Family", members: ["Manish Bhatt", "Sneha Bhatt", "Dev Bhatt"] },
+  { id: "P26", label: "Olivia Bennett", members: ["Olivia Bennett"] },
+  { id: "P27", label: "Sameer Ali", members: ["Sameer Ali"] }
+];
+
+/* =========================================================
+   Backend: Google Apps Script (same project), Apps Script URL, or preview
+   ========================================================= */
+function serverError(r) {
+  var e = new Error((r && r.error) || "Not saved");
+  e.code = r && r.code;
+  return e;
+}
+var backend = (function () {
+  var gs = (typeof google !== "undefined" && google.script && google.script.run) ? google.script.run : null;
+  if (gs) {
+    return {
+      mode: "google",
+      load: function () {
+        return new Promise(function (res, rej) {
+          google.script.run.withSuccessHandler(res).withFailureHandler(rej).getParties();
+        });
+      },
+      submit: function (payload) {
+        return new Promise(function (res, rej) {
+          google.script.run.withSuccessHandler(function (r) { r && r.ok ? res(r) : rej(serverError(r)); })
+            .withFailureHandler(rej).submitRsvp(payload);
+        });
+      }
+    };
+  }
+  if (CONFIG.API_URL) {
+    var timed = function (url, opts) {
+      var ctl = new AbortController();
+      var t = setTimeout(function () { ctl.abort(); }, 20000);
+      opts = opts || {}; opts.signal = ctl.signal;
+      return fetch(url, opts).finally(function () { clearTimeout(t); });
+    };
+    return {
+      mode: "api",
+      load: function () {
+        return timed(CONFIG.API_URL + "?action=parties").then(function (r) { return r.json(); })
+          .then(function (j) { if (!j || !j.parties) throw new Error("Bad response"); return j.parties; });
+      },
+      submit: function (payload) {
+        return timed(CONFIG.API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        }).then(function (r) { return r.json(); })
+          .then(function (j) { if (!j || !j.ok) throw serverError(j); return j; });
+      }
+    };
+  }
+  var KEY = "shower-rsvp-preview";
+  var memory = {};
+  var read = function () { try { return JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { return memory; } };
+  var write = function (v) { memory = v; try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {} };
+  return {
+    mode: "demo",
+    load: function () {
+      var saved = read();
+      return Promise.resolve(DEMO_PARTIES.map(function (p) {
+        var r = saved[p.id] || {};
+        return { id: p.id, label: p.label, members: p.members.slice(),
+                 statuses: p.members.map(function (m, i) { return (r.statuses && r.statuses[i]) || r.status || ""; }) };
+      }));
+    },
+    submit: function (payload) {
+      return new Promise(function (res) {
+        setTimeout(function () {
+          var saved = read();
+          saved[payload.partyId] = {
+            statuses: payload.responses.map(function (r) { return r.attending ? "attending" : "declined"; }),
+            message: payload.message, at: new Date().toISOString()
+          };
+          write(saved);
+          res({ ok: true });
+        }, 500);
+      });
+    }
+  };
+})();
+
+/* =========================================================
+   Fuzzy name matching
+   ========================================================= */
+var STOP = { the: 1, family: 1, and: 1 };
+function norm(s) {
+  return String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase().replace(/['’\x60]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+}
+function words(s) { return norm(s).split(" ").filter(Boolean); }
+function lev(a, b) {
+  if (a === b) return 0;
+  var m = a.length, n = b.length, prev = new Array(n + 1), cur = new Array(n + 1), i, j;
+  for (j = 0; j <= n; j++) prev[j] = j;
+  for (i = 1; i <= m; i++) {
+    cur[0] = i;
+    for (j = 1; j <= n; j++) {
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    }
+    var t = prev; prev = cur; cur = t;
+  }
+  return prev[n];
+}
+function tokenScore(q, t) {
+  if (t === q) return 1;
+  if (t.indexOf(q) === 0) return 0.9 + 0.08 * (q.length / t.length);
+  if (q.length >= 3 && t.indexOf(q) > 0) return 0.7;
+  if (q.length < 3) return 0;
+  var d1 = lev(q, t.slice(0, q.length)) / q.length;
+  var d2 = lev(q, t) / Math.max(q.length, t.length);
+  var sim = 1 - Math.min(d1, d2);
+  return sim >= 0.6 ? sim * 0.8 : 0;
+}
+function scoreAgainst(qTokens, qFull, candTokens, candFull) {
+  var total = 0;
+  for (var i = 0; i < qTokens.length; i++) {
+    var best = 0;
+    for (var j = 0; j < candTokens.length; j++) best = Math.max(best, tokenScore(qTokens[i], candTokens[j]));
+    total += best;
+  }
+  var s = total / qTokens.length;
+  if (candFull.indexOf(qFull) === 0) s += 0.15;
+  else if (qFull.length >= 3 && candFull.indexOf(qFull) > 0) s += 0.05;
+  return s;
+}
+function search(query, parties) {
+  var qFull = norm(query);
+  var qTokens = qFull.split(" ").filter(Boolean);
+  var meaningful = qTokens.filter(function (w) { return !STOP[w]; });
+  if (meaningful.length) qTokens = meaningful;
+  if (!qTokens.length) return [];
+  var hits = [];
+  parties.forEach(function (p) {
+    var best = { score: 0, member: p.members[0] };
+    p.members.forEach(function (m) {
+      var s = scoreAgainst(qTokens, qFull, words(m), norm(m));
+      if (s > best.score) best = { score: s, member: m };
+    });
+    if (best.score >= 0.55) hits.push({ party: p, member: best.member, score: best.score });
+  });
+  hits.sort(function (a, b) {
+    return b.score - a.score || a.member.localeCompare(b.member);
+  });
+  return hits;
+}
+
+/* =========================================================
+   UI
+   ========================================================= */
+var $ = function (id) { return document.getElementById(id); };
+var state = { parties: [], loadedAt: 0, hits: [], page: 0, query: "", party: null, choice: [] };
+
+function firstName(n) { return String(n).split(" ")[0]; }
+function joinNames(list) {
+  if (list.length <= 1) return list.join("");
+  return list.slice(0, -1).join(", ") + " & " + list[list.length - 1];
+}
+function show(id) {
+  ["v-search", "v-rsvp", "v-done"].forEach(function (v) {
+    var el = $(v);
+    el.hidden = v !== id;
+    el.classList.remove("enter");
+    if (v === id) { void el.offsetWidth; el.classList.add("enter"); }
+  });
+}
+
+// fill event text from CONFIG
+document.querySelectorAll(".js-honoree").forEach(function (el) { el.textContent = CONFIG.honoree; });
+document.querySelectorAll(".js-honoree-first").forEach(function (el) { el.textContent = firstName(CONFIG.honoree); });
+document.querySelectorAll(".js-date").forEach(function (el) { el.textContent = CONFIG.dateText; });
+document.querySelectorAll(".js-place").forEach(function (el) { el.textContent = CONFIG.place; });
+
+var q = $("q"), found = $("found"), searchForm = $("search"), findBtn = $("find");
+
+function highlight(name, qTokens) {
+  var frag = document.createDocumentFragment();
+  String(name).split(/(\s+)/).forEach(function (part) {
+    var n = norm(part);
+    var hit = n && qTokens.some(function (t) { return n.indexOf(t) === 0 || (t.length >= 3 && n.indexOf(t) >= 0); });
+    if (hit) { var b = document.createElement("b"); b.textContent = part; frag.appendChild(b); }
+    else frag.appendChild(document.createTextNode(part));
+  });
+  return frag;
+}
+function el(tag, cls, text) {
+  var e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text != null) e.textContent = text;
+  return e;
+}
+
+function runSearch() {
+  var value = q.value.trim();
+  if (norm(value).replace(/ /g, "").length < 2) {
+    state.hits = []; state.query = "";
+    showMessage("Type at least two letters of your name.");
+    q.focus();
+    return;
+  }
+  // Pick up guest-list edits made since the page was opened.
+  if (Date.now() - state.loadedAt < CONFIG.refreshAfterMs) return doSearch(value);
+  findBtn.disabled = true;
+  backend.load().then(setParties).catch(function () {}).then(function () {
+    findBtn.disabled = false;
+    doSearch(value);
+  });
+}
+function doSearch(value) {
+  var all = search(value, state.parties);
+  var named = words(value).filter(function (w) { return !STOP[w]; });
+  state.query = value;
+  state.page = 0;
+  if (all.length > CONFIG.maxResults && named.length < 2) {
+    state.hits = [];
+    showMessage("Lots of guests match \u201c" + value + "\u201d. Try your first and last name together.");
+    q.focus();
+    return;
+  }
+  state.hits = all.slice(0, CONFIG.maxResults);
+  renderFound();
+}
+function showMessage(text) {
+  found.textContent = "";
+  found.appendChild(el("p", "empty", text));
+  found.hidden = false;
+  $("hint").hidden = true;
+}
+function renderFound() {
+  var hits = state.hits, per = CONFIG.perPage;
+  if (!hits.length) {
+    showMessage("We couldn't find “" + state.query + "” on the guest list. Check the spelling, or try just your first or last name.");
+    return;
+  }
+  var pages = Math.ceil(hits.length / per);
+  var from = state.page * per, shown = hits.slice(from, from + per);
+  var qTokens = words(state.query);
+  found.textContent = "";
+
+  var head = el("div", "found-head");
+  head.appendChild(el("p", "eyebrow", hits.length === 1 ? "Is this you?" : "Which one is you?"));
+  if (pages > 1) head.appendChild(el("span", "found-count", (from + 1) + "–" + (from + shown.length) + " of " + hits.length));
+  found.appendChild(head);
+
+  var ul = el("ul", "matches");
+  shown.forEach(function (h) {
+    var p = h.party;
+    var li = el("li");
+    var b = el("button", "match");
+    b.type = "button";
+    b.appendChild(el("span", "avatar", (norm(h.member).charAt(0) || "?").toUpperCase()));
+    var txt = el("span", "opt-text");
+    var nm = el("span", "opt-name");
+    nm.appendChild(highlight(h.member, qTokens));
+    txt.appendChild(nm);
+    var others = p.members.filter(function (m) { return m !== h.member; });
+    txt.appendChild(el("span", "opt-sub", others.length
+      ? "with " + joinNames(others) + " · " + p.members.length + " guests"
+      : "1 guest"));
+    b.appendChild(txt);
+    if (hasReplied(p)) b.appendChild(el("span", "done-chip", "Replied"));
+    var chev = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    chev.setAttribute("class", "chev"); chev.setAttribute("width", "20"); chev.setAttribute("height", "20");
+    chev.setAttribute("viewBox", "0 0 24 24"); chev.setAttribute("aria-hidden", "true");
+    chev.innerHTML = '<path d="M9 6 L15 12 L9 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>';
+    b.appendChild(chev);
+    b.setAttribute("aria-label", "RSVP as " + h.member + (others.length ? ", with " + joinNames(others) : ""));
+    b.addEventListener("click", function () { openRsvp(p, h.member); });
+    li.appendChild(b);
+    ul.appendChild(li);
+  });
+  found.appendChild(ul);
+
+  if (pages > 1) {
+    var pager = el("div", "pager");
+    var prev = el("button", "", "‹ Previous"); prev.type = "button";
+    var next = el("button", "", "More matches ›"); next.type = "button";
+    prev.disabled = state.page === 0;
+    next.disabled = state.page >= pages - 1;
+    prev.addEventListener("click", function () { state.page--; renderFound(); focusFirst(); });
+    next.addEventListener("click", function () { state.page++; renderFound(); focusFirst(); });
+    pager.appendChild(prev); pager.appendChild(next);
+    found.appendChild(pager);
+  }
+  found.hidden = false;
+  $("hint").hidden = true;
+}
+function focusFirst() { var b = found.querySelector(".match"); if (b) b.focus(); }
+function clearFound() { found.hidden = true; found.textContent = ""; state.hits = []; $("hint").hidden = false; }
+
+searchForm.addEventListener("submit", function (e) { e.preventDefault(); if (!q.disabled) runSearch(); });
+q.addEventListener("input", function () {
+  $("clear").hidden = !q.value;
+  if (!q.value) clearFound();
+});
+$("clear").addEventListener("click", function () { q.value = ""; $("clear").hidden = true; clearFound(); q.focus(); });
+
+/* ----- reply step ----- */
+var form = $("v-rsvp"), msg = $("msg"), send = $("send");
+
+function hasReplied(p) { return (p.statuses || []).some(Boolean); }
+function statusToChoice(s) { return s === "attending" ? true : s === "declined" ? false : null; }
+
+function openRsvp(party, member) {
+  state.party = party;
+  state.member = member;
+  var many = party.members.length > 1;
+  state.choice = party.members.map(function (m, i) { return statusToChoice(party.statuses && party.statuses[i]); });
+
+  $("party-name").textContent = party.label;
+  var ul = $("people");
+  ul.textContent = "";
+  if (many) {
+    party.members.forEach(function (name, i) {
+      var li = el("li", "person");
+      li.id = "person-" + i;
+      li.appendChild(el("span", "p-name", name));
+      var seg = el("span", "seg");
+      seg.setAttribute("role", "radiogroup");
+      seg.setAttribute("aria-label", name);
+      [["y", true, "Attending", "go"], ["n", false, "Not attending", "nogo"]].forEach(function (o) {
+        var inp = document.createElement("input");
+        inp.type = "radio"; inp.name = "m" + i; inp.id = "m" + i + "-" + o[0]; inp.value = o[0];
+        inp.addEventListener("change", function () { state.choice[i] = o[1]; syncChoices(); });
+        var lab = el("label", o[3], o[2]);
+        lab.htmlFor = inp.id;
+        seg.appendChild(inp); seg.appendChild(lab);
+      });
+      li.appendChild(seg);
+      ul.appendChild(li);
+    });
+  }
+  $("each").hidden = !many;
+  $("choice-legend").textContent = many ? "Or answer for everyone" : "Will you be there?";
+  $("yes-title").textContent = many ? "We'll be there" : "I'll be there";
+  $("no-title").textContent = many ? "We can't make it" : "I can't make it";
+  $("yes-sub").textContent = many ? "Marks everyone attending" : "Joyfully accepts";
+  $("no-sub").textContent = many ? "Marks everyone not attending" : "Regretfully declines";
+
+  var prior = $("prior");
+  if (hasReplied(party)) {
+    prior.textContent = many
+      ? "We already have a reply from your family. Your earlier answers are filled in below; sending again will update them."
+      : "We already have your reply (" + (state.choice[0] ? "attending" : "not attending") + "). Sending again will update it.";
+    prior.hidden = false;
+  } else prior.hidden = true;
+  msg.value = "";
+  updateCount();
+  $("send-error").hidden = true;
+  send.textContent = hasReplied(party) ? "Update RSVP" : "Send RSVP";
+  syncChoices();
+  show("v-rsvp");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function setAll(value) {
+  state.choice = state.choice.map(function () { return value; });
+  syncChoices();
+}
+function syncChoices() {
+  var c = state.choice;
+  c.forEach(function (v, i) {
+    var y = $("m" + i + "-y"), n = $("m" + i + "-n");
+    if (y) { y.checked = v === true; n.checked = v === false; $("person-" + i).classList.toggle("is-set", v !== null); }
+  });
+  $("yes").checked = c.length > 0 && c.every(function (v) { return v === true; });
+  $("no").checked = c.length > 0 && c.every(function (v) { return v === false; });
+  var missing = c.filter(function (v) { return v === null; }).length;
+  send.disabled = missing > 0;
+  var need = $("need");
+  if (c.length > 1 && missing > 0 && missing < c.length) {
+    need.textContent = "Choose attending or not attending for " + (missing === 1 ? "1 more person" : missing + " more people") + ".";
+    need.hidden = false;
+  } else need.hidden = true;
+}
+function updateCount() { $("count").textContent = msg.value.length + " / 1000"; }
+$("yes").addEventListener("change", function () { setAll(true); });
+$("no").addEventListener("change", function () { setAll(false); });
+msg.addEventListener("input", updateCount);
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  var p = state.party;
+  if (!p || send.disabled) return;
+  var choice = state.choice.slice();
+  var payload = {
+    partyId: p.id,
+    responses: p.members.map(function (name, i) { return { name: name, attending: choice[i] }; }),
+    message: msg.value.trim().slice(0, 1000)
+  };
+  var label = send.textContent;
+  send.disabled = true;
+  send.textContent = "Sending…";
+  $("send-error").hidden = true;
+  backend.submit(payload).then(function () {
+    p.statuses = choice.map(function (v) { return v ? "attending" : "declined"; });
+    showDone(p, choice, !!payload.message);
+  }).catch(function (err) {
+    send.textContent = label;
+    $("send-error").hidden = false;
+    if (err && err.code === "stale") {
+      $("send-error").textContent = "Your family's names were just updated on our guest list. Please search your name again.";
+      send.disabled = true;
+      backend.load().then(setParties).catch(function () {});
+    } else {
+      $("send-error").textContent = "Your RSVP didn't go through. Check your connection and try again.";
+      send.disabled = false;
+    }
+  });
+});
+$("back").addEventListener("click", resetSearch);
+
+/* ----- thanks step ----- */
+function showDone(p, choice, hadNote) {
+  var yes = [], no = [];
+  p.members.forEach(function (m, i) { (choice[i] ? yes : no).push(firstName(m)); });
+  var text;
+  if (yes.length && !no.length) {
+    text = "We've saved " + (yes.length > 1 ? "spots" : "a spot") + " for " + joinNames(yes) + ". See you " + CONFIG.shortDate + " at " + CONFIG.place + ".";
+  } else if (yes.length) {
+    text = "We've saved " + (yes.length > 1 ? "spots" : "a spot") + " for " + joinNames(yes) + ", and we'll miss " + joinNames(no) + ". See you " + CONFIG.shortDate + " at " + CONFIG.place + ".";
+  } else {
+    text = "Thanks for letting us know, " + joinNames(no) + "." + (hadNote ? " Your note will mean so much to " + firstName(CONFIG.honoree) + "." : " You'll be with us in spirit.");
+  }
+  $("done-title").textContent = yes.length ? "Thank you!" : "We'll miss you";
+  $("done-eyebrow").textContent = "RSVP received";
+  $("done-text").textContent = text;
+  $("books").hidden = !yes.length;
+  show("v-done");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+$("change").addEventListener("click", function () { if (state.party) openRsvp(state.party, state.member); });
+$("restart").addEventListener("click", resetSearch);
+
+function resetSearch() {
+  state.party = null;
+  q.value = "";
+  $("clear").hidden = true;
+  clearFound();
+  show("v-search");
+  setTimeout(function () { q.focus(); }, 50);
+}
+
+/* ----- start ----- */
+function setParties(parties) {
+  state.parties = (parties || []).filter(function (p) { return p && p.id && p.members && p.members.length; });
+  state.parties.forEach(function (p) {
+    if (!Array.isArray(p.statuses)) p.statuses = p.members.map(function () { return p.status || ""; });
+  });
+  state.loadedAt = Date.now();
+}
+function loadGuests() {
+  q.disabled = true;
+  q.placeholder = "Loading guest list…";
+  $("hint").classList.remove("load-error");
+  $("hint").textContent = "Type your first and last name, then press Enter.";
+  backend.load().then(function (parties) {
+    setParties(parties);
+    q.disabled = false;
+    findBtn.disabled = false;
+    q.placeholder = "Your first and last name";
+    if (backend.mode === "demo") $("demo-tag").hidden = false;
+  }).catch(function () {
+    q.placeholder = "Guest list unavailable";
+    $("hint").classList.add("load-error");
+    $("hint").textContent = "We couldn't load the guest list. Refresh the page to try again.";
+  });
+}
+loadGuests();
+</script>
+
+</body></html>
